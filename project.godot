@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Space shooter"
+run/main_scene="uid://de3w7817qjiah"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
