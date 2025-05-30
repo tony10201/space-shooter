@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{65419AEF-8828-435E-9C7B-49A70EA176CD}|Space shooter.csproj|d:\\godot\\godot projects\\space shooter\\space-shooter\\assets\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65419AEF-8828-435E-9C7B-49A70EA176CD}|Space shooter.csproj|solutionrelative:assets\\player\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65419AEF-8828-435E-9C7B-49A70EA176CD}|Space shooter.csproj|d:\\godot\\godot projects\\space shooter\\space-shooter\\assets\\player\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65419AEF-8828-435E-9C7B-49A70EA176CD}|Space shooter.csproj|solutionrelative:assets\\player\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,9 +28,22 @@
               "RelativeDocumentMoniker": "Assets\\Player\\PlayerController.cs",
               "ToolTip": "D:\\Godot\\Godot Projects\\Space shooter\\space-shooter\\Assets\\Player\\PlayerController.cs",
               "RelativeToolTip": "Assets\\Player\\PlayerController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD4AAABIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-23T08:07:03.439Z",
+              "WhenOpened": "2025-05-30T14:55:32.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "D:\\Godot\\Godot Projects\\Space shooter\\space-shooter\\Assets\\Player\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Player\\Bullet.cs",
+              "ToolTip": "D:\\Godot\\Godot Projects\\Space shooter\\space-shooter\\Assets\\Player\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Player\\Bullet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T13:14:34.401Z",
               "EditorCaption": ""
             }
           ]

@@ -23,12 +23,12 @@ glow_enabled = true
 environment = SubResource("Environment_h46cc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.923304, -0.146977, 0.354834, 4.48456e-09, 0.92388, 0.382684, -0.38407, 0.353333, -0.853022, 0, 10, -11)
-light_color = Color(1, 0.735606, 0.472565, 1)
+transform = Transform3D(-0.923304, -0.146977, 0.354834, 0.288772, 0.343459, 0.89367, -0.25322, 0.927596, -0.274673, 0, 10, -11)
+light_color = Color(0.798223, 0.809328, 0.835233, 1)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 59, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 34.6059, 0)
 fov = 80.0
 
 [node name="Player" parent="." instance=ExtResource("1_fhhcb")]

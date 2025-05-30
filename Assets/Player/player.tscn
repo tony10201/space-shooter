@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=4 uid="uid://dojpan4pg7sgu"]
+[gd_scene load_steps=4 format=4 uid="uid://dojpan4pg7sgu"]
 
 [ext_resource type="Script" uid="uid://ddjpai43d4hvn" path="res://Assets/Player/PlayerController.cs" id="1_61lih"]
+[ext_resource type="PackedScene" uid="uid://dprl8xmqohdb7" path="res://Assets/Player/bullet.tscn" id="2_6miq6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sh265"]
 _surfaces = [{
@@ -16,10 +17,14 @@ _surfaces = [{
 [node name="Player" type="Node3D"]
 
 [node name="Visuals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.499587, 0)
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0113926, -0.000451326, 0.0103161)
 mesh = SubResource("ArrayMesh_sh265")
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("1_61lih")
+Bullet = ExtResource("2_6miq6")
+
+[node name="BulletOffset" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
