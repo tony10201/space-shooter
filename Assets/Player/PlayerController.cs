@@ -1,11 +1,12 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
 public partial class PlayerController : Node
 {
     [Export] private float speed = 20.0f;
 
-    [Export] private float shootingCD = 0.5f;
+    [Export] private double shootingCD = 0.25f;
 
     [Export] private PackedScene Bullet;
 
@@ -16,6 +17,8 @@ public partial class PlayerController : Node
     Node3D player;
 
     Node3D bulletOffset;
+
+    bool isReady = true;
 
 
     public override void _Ready()
@@ -36,15 +39,19 @@ public partial class PlayerController : Node
         input(delta);
     }
     // input handler
-    private void input(double delta)
+    private async void input(double delta)
     {
         float Horizontal = Input.GetAxis("Left", "Right");
         float Vertical = Input.GetAxis("Up", "Down");
 
         if (player != null)
         {
+            Vector3 offset = new Vector3(Horizontal * speed * (float)delta, 0, Vertical * speed * (float)delta).Normalized();
+            GD.Print(offset);
             // Moving controls
-            player.Position = player.Position += new Vector3(Horizontal * speed, 0, Vertical * speed).Normalized();
+            player.Position = player.Position += offset;
+
+            
 
             // Player rotation while moving
             player.RotateZ(Horizontal);
@@ -55,8 +62,9 @@ public partial class PlayerController : Node
 
             
             // holding down shoot button
-            if (Input.IsActionPressed("Shoot"))
+            if (Input.IsActionPressed("Shoot") && isReady == true)
             {
+                isReady = false;
                 Node3D instance = Bullet.Instantiate<Node3D>();
                 
                 player.GetParent<Node3D>().AddChild(instance);
@@ -64,6 +72,8 @@ public partial class PlayerController : Node
 
 
                 GD.Print("shooting");
+                await(ToSignal(GetTree().CreateTimer(shootingCD), SceneTreeTimer.SignalName.Timeout));
+                isReady = true;
 
             }
         }

@@ -11,7 +11,7 @@ emission = Color(1, 1, 1, 1)
 
 [node name="Bullet" type="Node3D"]
 script = ExtResource("1_oub5r")
-bulletSpeed = 100.0
+bulletSpeed = 25.0
 
 [node name="Visual" type="Node3D" parent="."]
 
@@ -19,7 +19,12 @@ bulletSpeed = 100.0
 mesh = SubResource("BoxMesh_oub5r")
 surface_material_override/0 = SubResource("StandardMaterial3D_oub5r")
 
-[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+[node name="OnScreen" type="VisibleOnScreenNotifier3D" parent="."]
 aabb = AABB(-0.25, -0.25, -0.5, 0.5, 0.5, 1)
 
-[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="OnNotVisable"]
+[node name="kill" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="screen_exited" from="OnScreen" to="." method="OnNotVisable"]
