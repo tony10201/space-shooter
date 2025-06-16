@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 public partial class PlayerController : Node
 {
@@ -20,6 +20,10 @@ public partial class PlayerController : Node
 
     bool isReady = true;
 
+    //screen limits
+    Vector2 HScreen_Limit = new Vector2(-30, 30);
+    Vector2 VScreen_Limit = new Vector2(-25, 25);
+
 
     public override void _Ready()
     {
@@ -35,7 +39,6 @@ public partial class PlayerController : Node
 
     public override void _Process(double delta)
     {
-        base._Process(delta);
         input(delta);
     }
     // input handler
@@ -46,12 +49,46 @@ public partial class PlayerController : Node
 
         if (player != null)
         {
-            Vector3 offset = new Vector3(Horizontal * speed * (float)delta, 0, Vertical * speed * (float)delta).Normalized();
-            GD.Print(offset);
+            //blocks out of bounds
+            //left Border
+            if (player.Position.X <= HScreen_Limit.X)
+            {
+                if (Horizontal == -1)
+                {
+                    Horizontal = 0;
+                }
+            }
+            //right Border
+            else if (player.Position.X >= HScreen_Limit.Y)
+            {
+                if (Horizontal == 1)
+                {
+                    Horizontal = 0;
+                }
+            }
+            // Bottom Border
+            if (player.Position.Z >= VScreen_Limit.Y)
+            {
+                if (Vertical == 1)
+                {
+                    GD.Print("Bottom Hit");
+                    Vertical = 0;
+                }
+            }
+            // Top Border
+            else if (player.Position.Z <= VScreen_Limit.X)
+            {
+                if (Vertical == -1)
+                {
+                    GD.Print("Top Hit");
+                    Vertical = 0;
+                }
+            }
             // Moving controls
+            Vector3 offset = new Vector3(Horizontal * speed * (float)delta, 0, Vertical * speed * (float)delta);
             player.Position = player.Position += offset;
 
-            
+           
 
             // Player rotation while moving
             player.RotateZ(Horizontal);

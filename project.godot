@@ -15,6 +15,12 @@ run/main_scene="uid://de3w7817qjiah"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=540
+window/size/resizable=false
+
 [dotnet]
 
 project/assembly_name="Space shooter"

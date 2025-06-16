@@ -17,7 +17,7 @@ public partial class Bullet : Node3D
     public override void _Process(double delta)
     {
 
-        Transform = Transform.Translated(Vector3.Forward * bulletSpeed * (float)delta );
+        Transform = Transform.Translated(Vector3.Forward * bulletSpeed * (float)delta);
 
     }
 

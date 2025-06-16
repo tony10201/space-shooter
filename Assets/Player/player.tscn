@@ -24,6 +24,7 @@ mesh = SubResource("ArrayMesh_sh265")
 
 [node name="PlayerController" type="Node" parent="."]
 script = ExtResource("1_61lih")
+speed = 50.0
 Bullet = ExtResource("2_6miq6")
 
 [node name="BulletOffset" type="Node3D" parent="."]
